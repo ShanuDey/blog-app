@@ -6,6 +6,7 @@ import { Login } from './components/Login';
 import { UserContext } from './contexts/UserContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Posts } from './components/Posts';
+import { CreatePost } from './components/CreatePost';
 
 function App() {
   const [user, setUser] = useState('');
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path='/login' element={<Login />} />
           <Route path='/' element={<Posts />} />
+          <Route path='/create-post' element={<CreatePost />} />
         </Routes>
         <Footer />
       </Router>
