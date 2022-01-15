@@ -7,6 +7,7 @@ import { UserContext } from './contexts/UserContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Posts } from './components/Posts';
 import { CreatePost } from './components/CreatePost';
+import { Container } from 'react-bootstrap';
 
 function App() {
   const [user, setUser] = useState('');
@@ -15,11 +16,18 @@ function App() {
     <UserContext.Provider value={{ user, setUser }}>
       <Router>
         <Header />
-        <Routes>
-          <Route path='/login' element={<Login />} />
-          <Route path='/' element={<Posts />} />
-          <Route path='/create-post' element={<CreatePost />} />
-        </Routes>
+        <Container
+          style={{
+            marginTop: '3em',
+            marginBottom: '5em',
+          }}
+        >
+          <Routes>
+            <Route path='/login' element={<Login />} />
+            <Route path='/' element={<Posts />} />
+            <Route path='/create-post' element={<CreatePost />} />
+          </Routes>
+        </Container>
         <Footer />
       </Router>
     </UserContext.Provider>

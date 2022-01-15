@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Container, ListGroup } from 'react-bootstrap';
+import { Card, ListGroup } from 'react-bootstrap';
 
 export const Post = ({ postData }) => {
   return (
@@ -26,14 +26,3 @@ export const Post = ({ postData }) => {
     </ListGroup.Item>
   );
 };
-
-/*
-PostDataModel = {
-  title: "string: title of the post"
-  subtitle:{
-    date: "created on"
-    author: "created by"
-  }
-  Body: "text: main body"
-}
-*/
