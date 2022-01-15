@@ -13,6 +13,8 @@ export const CreatePost = () => {
     event.preventDefault();
     if (user === '') {
       alert('No valid user found, Please login again');
+    } else if (title === '' || body === '') {
+      alert('Enter a valid Title and Body');
     } else {
       addDoc(collection(db, 'posts'), {
         title: title,
