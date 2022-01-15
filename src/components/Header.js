@@ -1,6 +1,7 @@
 import { signOut } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { Navbar, Container, Nav, NavDropdown } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import { UserContext } from '../contexts/UserContext';
 import { auth } from '../firebase';
 
@@ -21,15 +22,21 @@ export const Header = () => {
     <div>
       <Navbar bg='dark' variant='dark' expand='lg'>
         <Container>
-          <Navbar.Brand href='#home'>Blog App</Navbar.Brand>
+          <Navbar.Brand>Blog App</Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
           <Navbar.Collapse id='basic-navbar-nav'>
             <Nav className='me-auto'>
-              <Nav.Link href='#home'>Home</Nav.Link>
+              <Link to='/' className='nav-link'>
+                Home
+              </Link>
               {user !== '' && (
-                <Nav.Link href='#create-post'>Create Post</Nav.Link>
+                <Link to='/create-post' className='nav-link'>
+                  Create Post
+                </Link>
               )}
-              <Nav.Link href='#about'>About</Nav.Link>
+              <Link to='/about' className='nav-link'>
+                About
+              </Link>
             </Nav>
             <Nav className='justify-content-end'>
               {user !== '' ? (
@@ -42,9 +49,9 @@ export const Header = () => {
                   </NavDropdown.Item>
                 </NavDropdown>
               ) : (
-                <Navbar.Text>
-                  <a href='#login'>Login</a>
-                </Navbar.Text>
+                <Link to='/login' className='nav-link'>
+                  Login
+                </Link>
               )}
             </Nav>
           </Navbar.Collapse>
