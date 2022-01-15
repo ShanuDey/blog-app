@@ -4,15 +4,18 @@ import { LoginWithGoogleButton } from './LoginWithGoogleButton';
 import { signInWithPopup } from 'firebase/auth';
 import { auth, provider } from '../firebase';
 import { UserContext } from '../contexts/UserContext';
+import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
   const { user, setUser } = useContext(UserContext);
+  let navigate = useNavigate();
 
   const loginHandler = () => {
     signInWithPopup(auth, provider)
       .then((result) => {
         const displayName = result.user.displayName;
         setUser(displayName);
+        navigate('/');
       })
       .catch((error) => {
         console.log(error.code, error.message);
