@@ -1,3 +1,3 @@
 # Blog App
 
-[Open Application](https://ShanuDey.github.io/blog-app)
+[Open Application](https://react-blog-project-5e3f9.web.app)
