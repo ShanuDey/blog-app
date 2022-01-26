@@ -8,6 +8,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Posts } from './components/Posts';
 import { CreatePost } from './components/CreatePost';
 import { Container } from 'react-bootstrap';
+import About from './components/About';
 
 function App() {
   const [user, setUser] = useState('');
@@ -26,6 +27,7 @@ function App() {
             <Route path='/login' element={<Login />} />
             <Route path='/' element={<Posts />} />
             <Route path='/create-post' element={<CreatePost />} />
+            <Route path='/about' element={<About />} />
           </Routes>
         </Container>
         <Footer />
