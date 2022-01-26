@@ -5,7 +5,7 @@ import { db } from '../firebase';
 import { addDoc, collection } from 'firebase/firestore';
 
 export const CreatePost = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { user } = useContext(UserContext);
   const [title, setTitle] = useState('');
   const [body, setBody] = useState('');
 

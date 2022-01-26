@@ -7,7 +7,7 @@ import { UserContext } from '../contexts/UserContext';
 import { useNavigate } from 'react-router-dom';
 
 export const Login = () => {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   let navigate = useNavigate();
 
   const loginHandler = () => {
