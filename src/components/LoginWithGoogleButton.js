@@ -3,10 +3,8 @@ import React from 'react';
 export const LoginWithGoogleButton = ({ onClickHandler }) => {
   return (
     <div>
-      <a
+      <button
         className='btn btn-outline-dark'
-        href='#'
-        role='button'
         style={{ 'text-transform': 'none' }}
         onClick={onClickHandler}
       >
@@ -17,7 +15,7 @@ export const LoginWithGoogleButton = ({ onClickHandler }) => {
           src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/512px-Google_%22G%22_Logo.svg.png'
         />
         Login with Google
-      </a>
+      </button>
     </div>
   );
 };
