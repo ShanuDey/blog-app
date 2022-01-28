@@ -8,15 +8,33 @@ const Countdown = () => {
   const [intervalID, setIntervalID] = useState(null);
   const dateTimeRef = useRef('');
 
+  const getNow = (offSetMin = 0) => {
+    let now = new Date();
+    let dd = now.getDate();
+    let mm = now.getMonth() + 1; //January is 0 so need to add 1 to make it 1!
+    let yyyy = now.getFullYear();
+    if (dd < 10) {
+      dd = '0' + dd;
+    }
+    if (mm < 10) {
+      mm = '0' + mm;
+    }
+    now.setMinutes(now.getMinutes() + offSetMin);
+    let time = now.toLocaleTimeString('en-US', { hour12: false });
+    return `${yyyy}-${mm}-${dd}T${time}`;
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
     clearInterval(intervalID);
+    // console.log(dateTimeRef.current.value);
     setTimer(dateTimeRef.current.value);
   };
 
   const handleButtonClick = (e) => {
     if (showForm) handleSubmit(e);
     setShowForm(!showForm);
+    // console.log(getNow());
   };
 
   useEffect(() => {
@@ -60,6 +78,8 @@ const Countdown = () => {
               name='date_of_birth'
               ref={dateTimeRef}
               step='1'
+              defaultValue={getNow(45)}
+              min={getNow()}
             />
           ) : (
             ''
