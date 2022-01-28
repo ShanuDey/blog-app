@@ -34,6 +34,9 @@ export const Header = () => {
                   Create Post
                 </Link>
               )}
+              <Link to='/countdown' className='nav-link'>
+                Countdown
+              </Link>
               <Link to='/about' className='nav-link'>
                 About
               </Link>

@@ -9,6 +9,7 @@ import { Posts } from './components/Posts';
 import { CreatePost } from './components/CreatePost';
 import { Container } from 'react-bootstrap';
 import About from './components/About';
+import Countdown from './components/Countdown';
 
 function App() {
   const [user, setUser] = useState('');
@@ -28,6 +29,7 @@ function App() {
             <Route path='/' element={<Posts />} />
             <Route path='/create-post' element={<CreatePost />} />
             <Route path='/about' element={<About />} />
+            <Route path='/countdown' element={<Countdown />} />
           </Routes>
         </Container>
         <Footer />
