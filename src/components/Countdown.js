@@ -19,7 +19,7 @@ const Countdown = () => {
     setShowForm(!showForm);
   };
 
-  const countdown = () => {
+  useEffect(() => {
     if (timer.length !== 0) {
       const countdownIntervalId = setInterval(() => {
         const now = new Date().getTime();
@@ -45,10 +45,6 @@ const Countdown = () => {
       }, 1000);
       setIntervalID(countdownIntervalId);
     }
-  };
-
-  useEffect(() => {
-    countdown();
   }, [timer]);
 
   return (
