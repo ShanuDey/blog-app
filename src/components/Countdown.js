@@ -37,6 +37,7 @@ const Countdown = () => {
         if (timeRemaining < 0) {
           clearInterval(countdownIntervalId);
           setTimeLeft('');
+          alert('🎉🎉 Congratulation 🎉🎉');
         } else {
           setTimeLeft(
             `${days} Day ${hours} Hour ${minutes} Min ${seconds} Sec`
@@ -75,7 +76,7 @@ const Countdown = () => {
       <Card.Footer className='text-muted'>
         {timer.length === 0
           ? 'Timer has not set yet'
-          : `Timer set for ${timer}`}
+          : `Timer set for ${new Date(timer).toLocaleString('en-US')}`}
       </Card.Footer>
     </Card>
   );
