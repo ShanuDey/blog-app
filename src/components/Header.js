@@ -20,7 +20,7 @@ export const Header = () => {
 
   return (
     <div>
-      <Navbar bg='dark' variant='dark' expand='lg' fixed='top'>
+      <Navbar bg='light' variant='light' expand='lg' fixed='top'>
         <Container>
           <Navbar.Brand>Blog App</Navbar.Brand>
           <Navbar.Toggle aria-controls='basic-navbar-nav' />
