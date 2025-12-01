@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import { Container, Card, Form, Button } from 'react-bootstrap';
 import { UserContext } from '../contexts/UserContext';
 import { db } from '../firebase';
-import { addDoc, collection } from 'firebase/firestore';
+import { addDoc, collection, serverTimestamp } from 'firebase/firestore';
 
 export const CreatePost = () => {
   const { user } = useContext(UserContext);
@@ -20,6 +20,7 @@ export const CreatePost = () => {
         title: title,
         author: user,
         date: new Date().toLocaleDateString('en-US'),
+        createdAt: serverTimestamp(),
         body: body,
       })
         .then((result) => {
