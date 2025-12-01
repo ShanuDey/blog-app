@@ -9,20 +9,18 @@ export const Posts = () => {
 
   const fetchPosts = async () => {
     const querySnapshot = await getDocs(collection(db, 'posts'));
+    const postsData = [];
     querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      // console.log(doc.id, ' => ', doc.data(), posts);
-      setPosts((currPosts) => {
-        // console.log(currPosts);
-        return [
-          ...currPosts,
-          {
-            key: doc.id,
-            data: doc.data(),
-          },
-        ];
-      });
+      postsData.push({ key: doc.id, data: doc.data() });
     });
+
+    const sortedPosts = postsData.sort((a, b) => {
+      const dateA = a.data.createdAt ? a.data.createdAt.toDate() : new Date(a.data.date);
+      const dateB = b.data.createdAt ? b.data.createdAt.toDate() : new Date(b.data.date);
+      return dateB - dateA;
+    });
+
+    setPosts(sortedPosts);
   };
 
   useEffect(() => {
