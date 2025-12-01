@@ -36,16 +36,7 @@ Follow these instructions to run the project locally.
 
 ### Environment Setup
 
-Create a `.env` file in the root directory and add your Firebase configuration keys. Note that this project uses **Vite**, so environment variables must start with `VITE_`.
-
-```env
-VITE_APIKEY=your_api_key
-VITE_AUTHDOMAIN=your_auth_domain
-VITE_PROJECTID=your_project_id
-VITE_STORAGEBUCKET=your_storage_bucket
-VITE_MESSAGINGSENDERID=your_messaging_sender_id
-VITE_APPID=your_app_id
-```
+Create a `.env` file from `.env.example` and add your Firebase configuration keys. Note that this project uses **Vite**, so environment variables must start with `VITE_`.
 
 ### Running the App
 
